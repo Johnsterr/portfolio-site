@@ -1,2 +1,18 @@
+# IDE Settings
 .idea
 .vscode
+
+# Dirs
+node_modules
+dist
+.nuxt
+.output
+
+# Logs
+*.log*
+
+.nitro
+.cache
+
+# Files
+.env
