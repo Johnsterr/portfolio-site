@@ -17,6 +17,10 @@ module.exports = {
     `${srcDir}/nuxt.config.{js,ts}`,
   ],
   theme: {
+    colors: {
+      "color-primary": "hsl(var(--color-primary) / <alpha-value>)",
+      "raw-seinna": "hsl(var(--raw-seinna) / <alpha-value>)",
+    },
     extend: {},
   },
   variants: {

@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --raw-seinna: 24 74% 58%;
+    --bg-primary: 0 0% 90%;
+    --bg-secondary: 0 0% 100%;
+    --color-primary: 0 0% 12%;
+    --color-secondary: 0 0% 37%;
+    --card-shadow: 0, 0%, 0%;
+    --input-bg: 0 0% 93%;
+    --shadow-1: 10px 10px 40px var(--card-shadow);
+  }
+
+  :root.dark {
+    --bg-primary: 0 0% 12%;
+    --bg-secondary: 0 0% 19%;
+    --color-primary: 0 0% 100%;
+    --color-secondary: 0 0% 62%;
+    --card-shadow: 0, 0%, 0%;
+    --input-bg: 0 0% 16%;
+    --shadow-1: 10px 10px 40px var(--card-shadow);
+  }
+
+  .active {
+  }
+
+  .logo {
+    position: relative;
+    min-width: 80px;
+    z-index: 2;
+  }
+}
