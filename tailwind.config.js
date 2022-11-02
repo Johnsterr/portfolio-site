@@ -5,6 +5,7 @@ const srcDir = path.join(__dirname); // without / on end
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
+  darkMode: "class",
   content: [
     `${srcDir}/assets/**/*.css`,
     `${srcDir}/components/**/*.vue`,
