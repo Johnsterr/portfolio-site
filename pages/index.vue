@@ -1,5 +1,5 @@
 <template>
-  <div>Index Page</div>
+  <div class="h-[200vh]">Index Page</div>
 </template>
 
 <script lang="ts">

@@ -1,4 +1,4 @@
-import * as path from "path";
+const path = require("path");
 
 const srcDir = path.join(__dirname); // without / on end
 
@@ -17,11 +17,19 @@ module.exports = {
     `${srcDir}/nuxt.config.{js,ts}`,
   ],
   theme: {
-    colors: {
-      "color-primary": "hsl(var(--color-primary) / <alpha-value>)",
-      "raw-seinna": "hsl(var(--raw-seinna) / <alpha-value>)",
+    extend: {
+      colors: {
+        black: "black",
+        "color-primary": "hsl(var(--color-primary) / <alpha-value>)",
+        "raw-seinna": "hsl(var(--raw-seinna) / <alpha-value>)",
+        "bg-primary": "hsl(var(--bg-primary) / <alpha-value>)",
+        "bg-secondary": "hsl(var(--bg-secondary) / <alpha-value>)",
+      },
+      boxShadow: {
+        "inset-shadow":
+          "box-shadow: inset 9px -6px rgb(var(--sizzling-sunrise) / <alpha-value>)",
+      },
     },
-    extend: {},
   },
   variants: {
     extend: {},

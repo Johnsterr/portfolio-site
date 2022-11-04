@@ -5,6 +5,10 @@
 @layer base {
   :root {
     --raw-seinna: 24 74% 58%;
+    --sizzling-sunrise: 51 95% 54%;
+    --scarlet: 13 96% 47%;
+    --black: 0 0% 0%;
+    --white: 0 0% 100%;
     --bg-primary: 0 0% 90%;
     --bg-secondary: 0 0% 100%;
     --color-primary: 0 0% 12%;
@@ -22,6 +26,10 @@
     --card-shadow: 0, 0%, 0%;
     --input-bg: 0 0% 16%;
     --shadow-1: 10px 10px 40px var(--card-shadow);
+  }
+
+  .unset {
+    all: unset;
   }
 
   .active {
