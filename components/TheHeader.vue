@@ -12,7 +12,11 @@
       </h1>
 
       <div class="ml-auto flex items-center gap-4">
-        <select class="w-[45px] text-color-primary" name="language" id="lang">
+        <select
+          class="w-[45px] border-none bg-transparent text-color-primary"
+          name="language"
+          id="lang"
+        >
           <option class="bg-bg-primary text-color-primary" value="en">
             En
           </option>
