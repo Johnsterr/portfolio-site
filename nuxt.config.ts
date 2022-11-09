@@ -17,5 +17,7 @@ export default defineNuxtConfig({
   tailwindcss: {},
   colorMode: {
     classSuffix: "",
+    preference: "light",
+    storageKey: "color-mode",
   },
 });
