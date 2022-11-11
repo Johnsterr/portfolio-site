@@ -17,9 +17,17 @@ export class ThemeMode implements IThemeMode {
    */
   public toggleMode(): void {
     this.colorMode.preference === "light"
-      ? (this.colorMode.preference = "dark")
-      : (this.colorMode.preference = "light");
+      ? this.setDarkMode()
+      : this.setLightMode();
     console.log(this.colorMode.preference);
+  }
+
+  private setDarkMode(): void {
+    this.colorMode.preference = "dark";
+  }
+
+  private setLightMode(): void {
+    this.colorMode.preference = "light";
   }
 
   /**
