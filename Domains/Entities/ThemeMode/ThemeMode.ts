@@ -3,18 +3,29 @@ import { IThemeMode } from "./IThemeMode";
 
 export class ThemeMode implements IThemeMode {
   colorMode: ColorModeInstance;
+  darkMode: boolean;
+
   private constructor() {
     this.colorMode = useColorMode();
+    this.darkMode = this.initializeMode();
+  }
+
+  get isDarkMode(): boolean {
+    return this.darkMode;
+  }
+
+  get getColorMode(): string {
+    return this.colorMode.value;
   }
 
   public static create() {
-    const instance = new ThemeMode();
-    return instance;
+    return new ThemeMode();
   }
 
-  /**
-   * toggleTheme
-   */
+  private initializeMode(): boolean {
+    return this.colorMode.value === "light" ? false : true;
+  }
+
   public toggleMode(): void {
     this.colorMode.preference === "light"
       ? this.setDarkMode()
@@ -24,16 +35,11 @@ export class ThemeMode implements IThemeMode {
 
   private setDarkMode(): void {
     this.colorMode.preference = "dark";
+    this.darkMode = true;
   }
 
   private setLightMode(): void {
     this.colorMode.preference = "light";
-  }
-
-  /**
-   * getMode
-   */
-  get getMode(): string {
-    return this.colorMode.value;
+    this.darkMode = false;
   }
 }
