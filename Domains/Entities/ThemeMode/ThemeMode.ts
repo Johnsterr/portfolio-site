@@ -1,29 +1,63 @@
 import { ColorModeInstance } from "@nuxtjs/color-mode/dist/runtime/types";
 import { IThemeMode } from "./IThemeMode";
+import { storageThemeModeKey } from "~~/application/config/StorageThemeModeKey";
 
 export class ThemeMode implements IThemeMode {
   colorMode: ColorModeInstance;
-  darkMode: boolean;
+  darkMode: boolean = false;
 
   private constructor() {
     this.colorMode = useColorMode();
-    this.darkMode = this.initializeMode();
-  }
-
-  get isDarkMode(): boolean {
-    return this.darkMode;
-  }
-
-  get getColorMode(): string {
-    return this.colorMode.value;
+    this.initializeMode();
   }
 
   public static create() {
     return new ThemeMode();
   }
 
-  private initializeMode(): boolean {
-    return this.colorMode.value === "light" ? false : true;
+  private initializeMode() {
+    if (process.client) {
+      const colorMode = this.getModeFromLocalStorage();
+
+      if (colorMode === "dark" || this.hasMatchFoundModeKey()) {
+        this.addDarkClass();
+        this.setDarkMode();
+        return;
+      }
+      this.removeDarkClass();
+      this.setLightMode();
+    }
+  }
+
+  private getModeFromLocalStorage(): string | null {
+    return localStorage.getItem(storageThemeModeKey);
+  }
+
+  private hasMatchFoundModeKey(): boolean {
+    return (
+      !(storageThemeModeKey in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+  }
+
+  private addDarkClass(): void {
+    document.documentElement.classList.add("dark");
+  }
+
+  private setDarkMode(): void {
+    this.colorMode.preference = "dark";
+    this.darkMode = true;
+    localStorage.setItem(storageThemeModeKey, "dark");
+  }
+
+  private removeDarkClass(): void {
+    document.documentElement.classList.remove("dark");
+  }
+
+  private setLightMode(): void {
+    this.colorMode.preference = "light";
+    this.darkMode = false;
+    localStorage.setItem(storageThemeModeKey, "light");
   }
 
   public toggleMode(): void {
@@ -33,13 +67,11 @@ export class ThemeMode implements IThemeMode {
     console.log(this.colorMode.preference);
   }
 
-  private setDarkMode(): void {
-    this.colorMode.preference = "dark";
-    this.darkMode = true;
+  public get isDarkMode(): boolean {
+    return this.darkMode;
   }
 
-  private setLightMode(): void {
-    this.colorMode.preference = "light";
-    this.darkMode = false;
+  public get getColorMode(): string {
+    return this.colorMode.value;
   }
 }
