@@ -9,35 +9,24 @@
     --scarlet: 13 96% 47%;
     --black: 0 0% 0%;
     --white: 0 0% 100%;
-    --bg-primary: 0 0% 90%;
-    --bg-secondary: 0 0% 100%;
-    --color-primary: 0 0% 12%;
-    --color-secondary: 0 0% 37%;
+    --bg-primary: 230 230 230;
+    --bg-secondary: 255 255 255;
+    --color-primary: 31 31 31;
+    --color-secondary: 94 94 94;
     --card-shadow: 0, 0%, 0%;
     --input-bg: 0 0% 93%;
-    --shadow-1: 10px 10px 40px var(--card-shadow);
   }
 
   :root.dark {
-    --bg-primary: 0 0% 12%;
-    --bg-secondary: 0 0% 19%;
-    --color-primary: 0 0% 100%;
-    --color-secondary: 0 0% 62%;
+    --bg-primary: 31 31 31;
+    --bg-secondary: 48 48 48;
+    --color-primary: 255 255 255;
+    --color-secondary: 158 158 158;
     --card-shadow: 0, 0%, 0%;
     --input-bg: 0 0% 16%;
-    --shadow-1: 10px 10px 40px var(--card-shadow);
   }
 
   .unset {
     all: unset;
-  }
-
-  .active {
-  }
-
-  .logo {
-    position: relative;
-    min-width: 80px;
-    z-index: 2;
   }
 }

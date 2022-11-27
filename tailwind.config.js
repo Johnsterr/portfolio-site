@@ -8,26 +8,23 @@ module.exports = {
   darkMode: "class",
   content: [
     `${srcDir}/assets/**/*.css`,
-    `${srcDir}/components/**/*.vue`,
-    `${srcDir}/layouts/**/*.vue`,
-    `${srcDir}/pages/**/*.vue`,
+    `${srcDir}/components/**/*.{vue,js,ts,jsx,tsx}`,
+    `${srcDir}/layouts/**/*.{vue,js,ts,jsx,tsx}`,
+    `${srcDir}/pages/**/*.{vue,js,ts,jsx,tsx}`,
     `${srcDir}/composables/**/*.{vue,js,ts}`,
     `${srcDir}/plugins/**/*.{js,ts}`,
-    `${srcDir}/*.{vue,js,ts}`,
+    `${srcDir}/*.{vue,js,ts,jsx,tsx}`,
     `${srcDir}/nuxt.config.{js,ts}`,
   ],
   theme: {
     extend: {
       colors: {
         black: "black",
-        "color-primary": "hsl(var(--color-primary) / <alpha-value>)",
+        "color-primary": "rgb(var(--color-primary) / <alpha-value>)",
+        "color-secondary": "rgb(var(--color-secondary) / <alpha-value>)",
         "raw-seinna": "hsl(var(--raw-seinna) / <alpha-value>)",
-        "bg-primary": "hsl(var(--bg-primary) / <alpha-value>)",
-        "bg-secondary": "hsl(var(--bg-secondary) / <alpha-value>)",
-      },
-      boxShadow: {
-        "inset-shadow":
-          "box-shadow: inset 9px -6px rgb(var(--sizzling-sunrise) / <alpha-value>)",
+        "bg-primary": "rgb(var(--bg-primary) / <alpha-value>)",
+        "bg-secondary": "rgb(var(--bg-secondary) / <alpha-value>)",
       },
     },
   },
