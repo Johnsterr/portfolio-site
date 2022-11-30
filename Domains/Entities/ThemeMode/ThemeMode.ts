@@ -64,7 +64,6 @@ export class ThemeMode implements IThemeMode {
     this.colorMode.preference === "light"
       ? this.setDarkMode()
       : this.setLightMode();
-    console.log(this.colorMode.preference);
   }
 
   public get isDarkMode(): boolean {
