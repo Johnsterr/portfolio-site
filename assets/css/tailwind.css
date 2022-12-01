@@ -29,4 +29,12 @@
   .unset {
     all: unset;
   }
+
+  .-rotate-90-transform-3 {
+    transform: rotate(90deg) translateX(-3px);
+  }
+
+  .rotate-90-transform-3 {
+    transform: rotate(90deg) translateX(3px);
+  }
 }
