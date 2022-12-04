@@ -15,6 +15,7 @@ module.exports = {
     `${srcDir}/plugins/**/*.{js,ts}`,
     `${srcDir}/*.{vue,js,ts,jsx,tsx}`,
     `${srcDir}/nuxt.config.{js,ts}`,
+    `${srcDir}/app.vue`,
   ],
   theme: {
     extend: {
