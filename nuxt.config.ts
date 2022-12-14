@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
-import { storageThemeModeKey } from "./application/config/StorageThemeModeKey";
+import { storageThemeModeKey } from "./App/Config/StorageThemeModeKey";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
