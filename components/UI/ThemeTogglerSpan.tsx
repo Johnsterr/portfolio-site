@@ -1,4 +1,4 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import IconsMoon from "../Icons/Moon";
 import IconsSun from "../Icons/Sun";
 
