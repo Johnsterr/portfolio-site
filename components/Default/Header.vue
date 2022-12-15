@@ -10,7 +10,7 @@
       </h1>
 
       <div class="ml-auto flex items-center gap-4">
-        <UIThemeToggler />
+        <ThemeModeButton />
       </div>
       <!-- Дебаг div -->
       <div>{{ isScrollToTop }}</div>
