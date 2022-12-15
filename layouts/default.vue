@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <TheHeader />
-    <slot />
-  </div>
+  <DefaultHeader />
+  <slot />
+  <TheFooter />
 </template>
 
 <script lang="ts">
@@ -11,14 +10,14 @@ import { defineComponent } from "vue";
 export default defineComponent({
   setup() {
     useHead({
-      title: "Evgeniy Pashko's Portfolio",
+      title: "Портфолио",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           hid: "description",
           name: "description",
-          content: "Evgeniy Pashko's portfolio website",
+          content: "Сайт портфолио Евгения Пашко",
         },
       ],
     });
@@ -29,7 +28,7 @@ export default defineComponent({
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+  transition: all 0.25s;
 }
 .page-enter-from,
 .page-leave-to {
