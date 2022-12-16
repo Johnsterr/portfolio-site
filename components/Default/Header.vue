@@ -12,8 +12,6 @@
       <div class="ml-auto flex items-center gap-4">
         <ThemeModeButton />
       </div>
-      <!-- Дебаг div -->
-      <div>{{ isScrollToTop }}</div>
 
       <Menu />
     </div>

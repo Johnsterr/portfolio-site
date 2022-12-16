@@ -1,6 +1,7 @@
 <template>
   <button
-    class="h-7 w-[52px] overflow-hidden rounded-[100px] bg-bg-secondary p-1 transition-all"
+    class="h-7 w-[52px] overflow-hidden rounded-[100px] p-1 transition-all"
+    :class="classes"
     @click="toggleTheme"
   >
     <ThemeModeButtonSpan :dark-mode-active="isDarkMode" />
@@ -15,6 +16,7 @@ export default defineComponent({
   setup() {
     const colorMode = ThemeMode.create();
     const isDarkMode = ref(false);
+    const isScrollToTop = useIsScrollToTop();
 
     function setModeValue(colorMode: ThemeMode) {
       return colorMode.isDarkMode;
@@ -32,7 +34,13 @@ export default defineComponent({
     return {
       isDarkMode,
       toggleTheme,
+      isScrollToTop,
     };
+  },
+  computed: {
+    classes() {
+      return this.isScrollToTop ? "bg-bg-secondary" : "bg-bg-primary";
+    },
   },
 });
 </script>
