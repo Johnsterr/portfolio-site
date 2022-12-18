@@ -26,8 +26,8 @@
   </button>
 
   <nav
-    class="lg:unset invisible fixed top-full left-0 z-[1] h-full w-full place-items-center bg-bg-secondary transition-all delay-500 duration-700"
-    data-navbar
+    class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-red-500 transition-all duration-700"
+    :class="navigationClasses"
   >
     <ul class="navbar-list">
       <li>
@@ -54,20 +54,45 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 export default defineComponent({
   setup() {
     const menuButtonIsActive = ref(false);
+    const bodyClasses = ref("bg-green-100");
 
     const toggleMenuButtonActive = () => {
       menuButtonIsActive.value = !menuButtonIsActive.value;
     };
 
+    const bodyAtr = computed(() => {
+      if (menuButtonIsActive.value) {
+        bodyClasses.value = "bg-blue-100";
+      } else {
+        bodyClasses.value = "bg-green-100";
+      }
+      return bodyClasses.value;
+    });
+
+    useHead({
+      bodyAttrs: {
+        class: bodyAtr,
+      },
+    });
+
     return {
       menuButtonIsActive,
       toggleMenuButtonActive,
     };
+  },
+  computed: {
+    navigationClasses() {
+      if (this.menuButtonIsActive) {
+        return `top-0 visible delay-[0s]`;
+      }
+
+      return `top-full invisible delay-500`;
+    },
   },
 });
 </script>
