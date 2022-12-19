@@ -67,9 +67,9 @@ export default defineComponent({
 
     const bodyAtr = computed(() => {
       if (menuButtonIsActive.value) {
-        bodyClasses.value = "bg-blue-100";
+        bodyClasses.value = "overflow-hidden";
       } else {
-        bodyClasses.value = "bg-green-100";
+        bodyClasses.value = "";
       }
       return bodyClasses.value;
     });
