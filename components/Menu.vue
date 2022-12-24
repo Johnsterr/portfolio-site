@@ -26,27 +26,42 @@
   </button>
 
   <nav
-    class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-red-500 transition-all duration-700"
-    :class="navigationClasses"
+    class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-bg-secondary transition-all duration-700"
+    :class="navbarClasses"
   >
-    <ul class="navbar-list">
-      <li>
-        <NuxtLink :to="{ name: 'index' }">Home.</NuxtLink>
+    <ul class="p-5">
+      <li class="my-2 overflow-hidden px-4">
+        <NuxtLink
+          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          :class="navbarLinkClasses"
+          :to="{ name: 'index' }"
+          >Home.</NuxtLink
+        >
       </li>
 
-      <li>
-        <NuxtLink :to="{ name: 'about' }">About.</NuxtLink>
+      <li class="my-2 overflow-hidden px-4">
+        <NuxtLink
+          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          :class="navbarLinkClasses"
+          :to="{ name: 'about' }"
+          >About.</NuxtLink
+        >
       </li>
 
-      <li>
-        <NuxtLink :to="{ name: 'skills' }">Skills.</NuxtLink>
+      <li class="my-2 overflow-hidden px-4">
+        <NuxtLink
+          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          :class="navbarLinkClasses"
+          :to="{ name: 'skills' }"
+          >Skills.</NuxtLink
+        >
       </li>
 
-      <li>
+      <li class="my-2 px-4">
         <!-- <NuxtLink :to="{ name: 'portfolio' }">Portfolio.</NuxtLink> -->
       </li>
 
-      <li>
+      <li class="my-2 px-4">
         <!-- <NuxtLink :to="{ name: 'contact' }">Contact.</NuxtLink> -->
       </li>
     </ul>
@@ -74,6 +89,22 @@ export default defineComponent({
       return bodyClasses.value;
     });
 
+    const navbarClasses = computed(() => {
+      if (menuButtonIsActive.value) {
+        return `top-0 visible delay-[0s] overflow-y-auto`;
+      } else {
+        return `top-full invisible delay-500`;
+      }
+    });
+
+    const navbarLinkClasses = computed(() => {
+      if (menuButtonIsActive.value) {
+        return `translate-y-0`;
+      } else {
+        return `translate-y-12`;
+      }
+    });
+
     useHead({
       bodyAttrs: {
         class: bodyAtr,
@@ -83,17 +114,19 @@ export default defineComponent({
     return {
       menuButtonIsActive,
       toggleMenuButtonActive,
+      navbarClasses,
+      navbarLinkClasses,
     };
   },
-  computed: {
-    navigationClasses() {
-      if (this.menuButtonIsActive) {
-        return `top-0 visible delay-[0s]`;
-      }
+  // computed: {
+  //   navigationClasses() {
+  //     if (this.menuButtonIsActive) {
+  //       return `top-0 visible delay-[0s]`;
+  //     }
 
-      return `top-full invisible delay-500`;
-    },
-  },
+  //     return `top-full invisible delay-500`;
+  //   },
+  // },
 });
 </script>
 
