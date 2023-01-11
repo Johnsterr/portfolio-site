@@ -1,5 +1,8 @@
 <template>
-  <BaseHeader>
+  <header
+    class="fixed top-0 left-0 z-[4] w-full transition-all duration-200"
+    :class="classes"
+  >
     <div class="container mx-auto flex items-center justify-between gap-3 px-3">
       <h1 class="relative min-w-[80px] text-[2rem] font-normal leading-[1.2]">
         <NuxtLink :to="{ name: 'index' }" class="capitalize text-color-primary">
@@ -13,7 +16,7 @@
 
       <Menu />
     </div>
-  </BaseHeader>
+  </header>
 </template>
 
 <script>
@@ -21,11 +24,16 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
-    const isScrollToTop = useIsScrollToTop();
+    const viewportIsAtTop = useViewportIsAtTop();
 
     return {
-      isScrollToTop,
+      viewportIsAtTop,
     };
+  },
+  computed: {
+    classes() {
+      return !this.viewportIsAtTop ? `py-3 bg-bg-secondary` : `py-4`;
+    },
   },
 });
 </script>
