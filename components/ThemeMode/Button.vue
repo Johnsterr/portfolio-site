@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted } from "vue";
+import { defineComponent, ref, computed, onMounted, Ref } from "vue";
 import { ThemeMode } from "~~/Domains/Entities/ThemeMode/ThemeMode";
 
 export default defineComponent({
@@ -17,17 +17,13 @@ export default defineComponent({
       "h-7 w-[52px] overflow-hidden rounded-[100px] p-1 transition-all";
     const baseSpanClasses = "relative top-0 h-5 w-5 transition-all";
 
-    const colorMode = ThemeMode.create();
-    const isDarkMode = ref(false);
-    const viewportIsAtTop = useState("viewportIsAtTop");
+    const colorMode: ThemeMode = ThemeMode.create();
+    const isDarkMode: Ref<null | boolean> = ref(null);
+    const viewportIsAtTop: Ref<boolean> = useState("viewportIsAtTop");
 
-    function setModeValue(colorMode: ThemeMode) {
-      return colorMode.isDarkMode;
-    }
-
-    const toggleTheme = function () {
+    const toggleTheme = () => {
       colorMode.toggleMode();
-      isDarkMode.value = setModeValue(colorMode);
+      isDarkMode.value = colorMode.isDarkMode();
     };
 
     const btnClasses = computed(() => {
@@ -43,7 +39,7 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      isDarkMode.value = setModeValue(colorMode);
+      isDarkMode.value = colorMode.isDarkMode();
     });
 
     return {
