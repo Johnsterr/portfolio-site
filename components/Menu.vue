@@ -30,38 +30,41 @@
     :class="navbarClasses"
   >
     <ul class="p-5">
-      <li class="my-2 overflow-hidden px-4">
+      <li class="my-4 overflow-hidden px-4">
         <NuxtLink
-          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
           :class="navbarLinkClasses"
           :to="{ name: 'index' }"
-          >Home.</NuxtLink
         >
+          Home.
+        </NuxtLink>
       </li>
 
-      <li class="my-2 overflow-hidden px-4">
+      <li class="my-4 overflow-hidden px-4">
         <NuxtLink
-          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
           :class="navbarLinkClasses"
           :to="{ name: 'about' }"
-          >About.</NuxtLink
         >
+          About.
+        </NuxtLink>
       </li>
 
-      <li class="my-2 overflow-hidden px-4">
+      <li class="my-4 overflow-hidden px-4">
         <NuxtLink
-          class="relative mx-auto block max-w-max p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
           :class="navbarLinkClasses"
           :to="{ name: 'skills' }"
-          >Skills.</NuxtLink
         >
+          Skills.
+        </NuxtLink>
       </li>
 
-      <li class="my-2 px-4">
+      <li class="my-4 px-4">
         <!-- <NuxtLink :to="{ name: 'portfolio' }">Portfolio.</NuxtLink> -->
       </li>
 
-      <li class="my-2 px-4">
+      <li class="my-4 px-4">
         <!-- <NuxtLink :to="{ name: 'contact' }">Contact.</NuxtLink> -->
       </li>
     </ul>
@@ -99,9 +102,9 @@ export default defineComponent({
 
     const navbarLinkClasses = computed(() => {
       if (menuButtonIsActive.value) {
-        return `translate-y-0`;
+        return `!translate-y-0 delay-700`;
       } else {
-        return `translate-y-12`;
+        return "";
       }
     });
 
