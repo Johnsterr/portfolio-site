@@ -66,11 +66,11 @@ export class ThemeMode implements IThemeMode {
       : this.setLightMode();
   }
 
-  public get isDarkMode(): boolean {
+  public isDarkMode(): boolean {
     return this.darkMode;
   }
 
-  public get getColorMode(): string {
+  public getColorMode(): string {
     return this.colorMode.value;
   }
 }
