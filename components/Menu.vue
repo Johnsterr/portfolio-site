@@ -59,14 +59,6 @@
           Skills.
         </NuxtLink>
       </li>
-
-      <li class="my-4 px-4">
-        <!-- <NuxtLink :to="{ name: 'portfolio' }">Portfolio.</NuxtLink> -->
-      </li>
-
-      <li class="my-4 px-4">
-        <!-- <NuxtLink :to="{ name: 'contact' }">Contact.</NuxtLink> -->
-      </li>
     </ul>
   </nav>
 </template>
