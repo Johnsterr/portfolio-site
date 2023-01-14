@@ -10,7 +10,7 @@
         </NuxtLink>
       </h1>
 
-      <div class="ml-auto flex items-center gap-4">
+      <div class="ml-auto flex items-center gap-4 lg:order-1 lg:ml-0">
         <ThemeModeButton />
       </div>
 

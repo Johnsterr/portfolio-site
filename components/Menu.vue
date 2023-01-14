@@ -1,6 +1,6 @@
 <template>
   <button
-    class="relative z-[2] transition-all"
+    class="relative z-[2] transition-all lg:hidden"
     :class="{
       '-rotate-[55deg]': !menuButtonIsActive,
       '-rotate-[45deg]': menuButtonIsActive,
@@ -29,10 +29,10 @@
     class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-bg-secondary transition-all duration-700"
     :class="navbarClasses"
   >
-    <ul class="p-5">
-      <li class="my-4 overflow-hidden px-4">
+    <ul class="p-5 lg:flex lg:items-center lg:justify-center lg:gap-5 lg:p-0">
+      <li class="my-4 overflow-hidden px-4 lg:m-0 lg:overflow-visible lg:p-0">
         <NuxtLink
-          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700 lg:translate-y-0 lg:px-2 lg:text-xl"
           :class="navbarLinkClasses"
           :to="{ name: 'index' }"
         >
@@ -40,9 +40,9 @@
         </NuxtLink>
       </li>
 
-      <li class="my-4 overflow-hidden px-4">
+      <li class="my-4 overflow-hidden px-4 lg:m-0 lg:overflow-visible lg:p-0">
         <NuxtLink
-          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700 lg:translate-y-0 lg:px-2 lg:text-xl"
           :class="navbarLinkClasses"
           :to="{ name: 'about' }"
         >
@@ -50,9 +50,9 @@
         </NuxtLink>
       </li>
 
-      <li class="my-4 overflow-hidden px-4">
+      <li class="my-4 overflow-hidden px-4 lg:m-0 lg:overflow-visible lg:p-0">
         <NuxtLink
-          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700"
+          class="relative mx-auto block max-w-max translate-y-12 p-3 text-3xl text-color-primary transition-all duration-700 lg:translate-y-0 lg:px-2 lg:text-xl"
           :class="navbarLinkClasses"
           :to="{ name: 'skills' }"
         >
