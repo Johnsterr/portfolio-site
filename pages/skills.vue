@@ -1,7 +1,7 @@
 <template>
   <div class="h-[120vh] bg-bg-primary">
-    <p class="mb-20">About Page</p>
-    <div class="h-[300px] w-10 bg-cyan-600"></div>
+    <p class="mb-20">Skills Page</p>
+    <div class="h-[300px] w-10 bg-red-400"></div>
   </div>
 </template>
 
