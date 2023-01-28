@@ -1,15 +1,17 @@
 <template>
   <button :class="btnClasses" @click="toggleTheme">
     <span :class="spanClasses">
-      <IconsMoon v-if="isDarkMode" class="h-5 w-5" />
-      <IconsSun v-else class="h-5 w-5" />
+      <IconBase name="Theme" width="20" height="20" class="h-5 w-5">
+        <IconsMoon v-if="isDarkMode" />
+        <IconsSun v-else />
+      </IconBase>
     </span>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, computed, onMounted, Ref } from "vue";
-import { ThemeMode } from "~~/Domains/Entities/ThemeMode/ThemeMode";
+import { ThemeMode } from "~~/fsd/entities/ThemeMode/ThemeMode";
 
 export default defineComponent({
   setup() {

@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
-import IconsMoon from "../Icons/Moon";
-import IconsSun from "../Icons/Sun";
+import IconsMoon from "./Moon";
+import IconsSun from "./Sun";
 
 const ThemeTogglerSpan = defineComponent({
   props: {
