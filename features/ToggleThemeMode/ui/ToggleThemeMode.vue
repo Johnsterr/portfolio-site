@@ -1,27 +1,17 @@
 <template>
   <button :class="btnClasses" @click="toggleTheme">
-    <span :class="spanClasses">
-      <KitIconBase name="Theme" width="20" height="20" class="h-5 w-5">
-        <MoonIcon v-if="isDarkMode" />
-        <SunIcon v-else />
-      </KitIconBase>
-    </span>
+    <slot />
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, computed, onMounted, Ref } from "vue";
 import { ThemeMode } from "~~/entities/ThemeMode";
-import { KitIconBase } from "~~/shared/ui/IconBase";
-import MoonIcon from "~~/shared/ui/Icons/Moon.vue";
-import SunIcon from "~~/shared/ui/Icons/Sun.vue";
 
 export default defineComponent({
-  components: { KitIconBase, MoonIcon, SunIcon },
   setup() {
     const baseBtnClasses =
       "h-7 w-[52px] overflow-hidden rounded-[100px] p-1 transition-all";
-    const baseSpanClasses = "relative top-0 h-5 w-5 transition-all";
 
     const colorMode: ThemeMode = ThemeMode.create();
     const isDarkMode: Ref<null | boolean> = ref(null);
@@ -37,13 +27,6 @@ export default defineComponent({
       return `${baseBtnClasses} ${classes}`;
     });
 
-    const spanClasses = computed(() => {
-      let classes = isDarkMode.value
-        ? "left-[22px] text-white"
-        : "left-[2px] text-yellow-500";
-      return `${baseSpanClasses} ${classes}`;
-    });
-
     onMounted(() => {
       isDarkMode.value = colorMode.isDarkMode();
     });
@@ -52,7 +35,6 @@ export default defineComponent({
       isDarkMode,
       toggleTheme,
       btnClasses,
-      spanClasses,
     };
   },
 });

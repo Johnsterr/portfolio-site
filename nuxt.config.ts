@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
-import { storageThemeModeKey } from "./fsd/shared/config";
+import { storageThemeModeKey } from "./shared/config";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -9,9 +9,6 @@ export default defineNuxtConfig({
   components: [
     {
       path: "~/components",
-    },
-    {
-      path: "~/fsd/shared/ui",
     },
   ],
   css: ["~/assets/css/tailwind.css"],
@@ -28,5 +25,8 @@ export default defineNuxtConfig({
     classSuffix: "",
     preference: "light",
     storageKey: storageThemeModeKey,
+  },
+  devServer: {
+    port: 3030,
   },
 });

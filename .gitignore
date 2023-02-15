@@ -16,3 +16,6 @@ dist
 
 # Files
 .env
+
+# System Files
+**/.DS_Store

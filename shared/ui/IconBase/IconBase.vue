@@ -15,14 +15,14 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+interface IconBaseProps {
   name?: string;
   width?: string | number;
   height?: string | number;
   color?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<IconBaseProps>(), {
   name: () => "Box",
   width: () => 18,
   height: () => 18,
