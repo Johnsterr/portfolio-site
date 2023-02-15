@@ -1,5 +1,5 @@
 <template>
-  <button :class="btnClasses" @click="toggleTheme">
+  <button :class="$style.btn" @click="toggleTheme">
     <slot />
   </button>
 </template>
@@ -39,3 +39,7 @@ export default defineComponent({
   },
 });
 </script>
+
+<style module lang="scss">
+@import "./ToggleThemeMode.module.scss";
+</style>
