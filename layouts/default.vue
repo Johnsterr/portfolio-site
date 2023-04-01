@@ -1,13 +1,17 @@
 <template>
   <DefaultHeader />
   <slot />
-  <TheFooter />
+  <DefaultFooter />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { DefaultFooter } from "~~/widgets/Footer";
 
 export default defineComponent({
+  components: {
+    DefaultFooter,
+  },
   setup() {
     useHead({
       title: "Портфолио",

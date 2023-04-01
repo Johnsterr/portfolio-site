@@ -5,7 +5,6 @@
     :height="height"
     :viewBox="viewBox"
     :aria-labelledby="name"
-    role="presentation"
   >
     <title :id="name" lang="en">{{ name }} icon</title>
     <g :fill="color">
@@ -15,15 +14,17 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+import { computed } from "vue";
+
+interface IconBaseProps {
   name?: string;
   width?: string | number;
   height?: string | number;
   color?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  name: () => "Box",
+const props = withDefaults(defineProps<IconBaseProps>(), {
+  name: () => "Base",
   width: () => 18,
   height: () => 18,
   color: () => "currentColor",

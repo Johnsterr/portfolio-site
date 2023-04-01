@@ -1,6 +1,6 @@
 import { ColorModeInstance } from "@nuxtjs/color-mode/dist/runtime/types";
 import { IThemeMode } from "./IThemeMode";
-import { storageThemeModeKey } from "~~/fsd/shared/config";
+import { storageThemeModeKey } from "~~/shared/config";
 
 export class ThemeMode implements IThemeMode {
   colorMode: ColorModeInstance;
