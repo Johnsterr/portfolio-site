@@ -1,0 +1,13 @@
+.btn {
+  padding: 4px;
+  height: 28px;
+  width: 52px;
+  border-radius: 100px;
+  overflow: hidden;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}

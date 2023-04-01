@@ -24,4 +24,7 @@ export default defineNuxtConfig({
     preference: "light",
     storageKey: storageThemeModeKey,
   },
+  devServer: {
+    port: 3030,
+  },
 });

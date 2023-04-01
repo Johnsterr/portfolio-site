@@ -1,12 +1,10 @@
-import { Ref } from "vue";
-import { ThemeMode } from "~~/Domains/Entities/ThemeMode/ThemeMode";
+import { reactive } from "vue";
+import { ThemeMode } from "~~/entities/ThemeMode";
 
 function useThemeMode() {
-  const themeMode = ThemeMode.create();
+  const themeMode = reactive(ThemeMode.create());
 
-  const isDarkMode: /*Ref<boolean>*/ = useState("isDarkMode", () =>
-    themeMode.isDarkMode()
-  );
+  const isDarkMode = useState("isDarkMode", () => themeMode.value.isDarkMode());
   const toggleTheme = () => themeMode.toggleMode();
 
   console.log(themeMode.isDarkMode());
