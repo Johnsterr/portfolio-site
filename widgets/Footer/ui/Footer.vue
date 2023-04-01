@@ -44,7 +44,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { KitBaseIcon } from "~~/shared/ui/Icon";
+import { KitBaseIcon } from "~~/shared/ui/BaseIcon";
 import Github from "~~/shared/ui/Icons/Github.vue";
 import Telegram from "~~/shared/ui/Icons/Telegram.vue";
 
