@@ -1,0 +1,11 @@
+@import "./global.scss";
+
+html {
+  font-size: var(--text-base); /*for using REM units*/
+}
+
+body {
+  font: var(--font-base);
+  font-weight: 400;
+  color: #222;
+}
