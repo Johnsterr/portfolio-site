@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ],
   //css: ["~/assets/css/tailwind.css"],
   build: {},
-  modules: ["@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/color-mode", "@pinia/nuxt"],
   postcss: {
     plugins: {
       autoprefixer: {},

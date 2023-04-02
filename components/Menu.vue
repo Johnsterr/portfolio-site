@@ -25,8 +25,6 @@
     ></span>
   </button>
 
-  <ToggleThemeMode>fg</ToggleThemeMode>
-
   <nav
     class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-bg-secondary transition-all duration-700"
     :class="navbarClasses"

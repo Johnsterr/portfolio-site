@@ -6,10 +6,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { DefaultFooter } from "~~/widgets/Footer";
+import { DefaultHeader } from "~~/widgets/DefaultHeader";
+import { DefaultFooter } from "~~/widgets/DefaultFooter";
 
 export default defineComponent({
   components: {
+    DefaultHeader,
     DefaultFooter,
   },
   setup() {

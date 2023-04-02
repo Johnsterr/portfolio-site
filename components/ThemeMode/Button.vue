@@ -77,7 +77,7 @@ export default defineComponent({
 <style lang="scss">
 .themeBtn {
   padding: 0.25rem;
-  height: 1.5rem;
+  height: 1.75rem;
   width: 52px;
   background-color: rgb(255 255 255 / 1);
   border-radius: 100px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[120vh] bg-bg-primary">
+  <div class="h-[120vh] bg-bg-primary" style="height: 200vh">
     <p class="mb-20">Skills Page</p>
     <div class="h-[300px] w-10 bg-red-400"></div>
   </div>

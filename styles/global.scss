@@ -22,15 +22,19 @@
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
   --primary-color: #{$bg-white};
+  --secondary-color: #{$bg-gray-200};
   --text-primary-color: #{$bg-gray-600};
   --text-hover-primary-color: #{$bg-gray-600};
   --text-secondary-color: #{$bg-gray-700};
   --text-hover-secondary-color: #{$bg-gray-800};
   --border-primary-color: #{$bg-gray-200};
+
+  --transition-cubic-bezier: 0.3s cubic-bezier(0.2, 0.6, 0, 1);
 }
 
 :root.dark {
   --primary-color: #{$bg-gray-800};
+  --secondary-color: #{$bg-gray-600};
   --text-primary-color: #{$bg-gray-200};
   --text-hover-primary-color: #{$bg-gray-200};
   --text-secondary-color: #{$bg-gray-300};
