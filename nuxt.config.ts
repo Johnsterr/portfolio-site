@@ -27,4 +27,18 @@ export default defineNuxtConfig({
   devServer: {
     port: 3030,
   },
+  // typescript: {
+  //   shim: false,
+  // },
+  vite: {
+    css: {
+      modules: {
+        generateScopedName:
+          process.env.NODE_ENV === "development"
+            ? "[path]_[local]"
+            : "[hash:base64:5]",
+        localsConvention: "camelCase",
+      },
+    },
+  },
 });
