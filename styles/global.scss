@@ -1,8 +1,19 @@
 @import "./vars.scss";
 
+@font-face {
+  font-family: #{$ff-marck-script};
+  font-weight: #{$fw-regular};
+  font-display: swap;
+  src: local("Marck Script"),
+    url("#{$fonts-path}/MarckScript-Regular.woff2") format("woff2"),
+    url("#{$fonts-path}/MarckScript-Regular.woff") format("woff"),
+    url("#{$fonts-path}/MarckScript-Regular.ttf") format("truetype");
+}
+
 :root {
   --text-base: #{$text-base};
   --font-family-main: #{$main-font};
+  --ff-marck-script: #{$ff-marck-script}, cursive;
 
   --font-size-m: 0.75rem;
   --font-line-m: 1rem;
@@ -21,6 +32,9 @@
   --font-line-xl: 1.75rem;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
+  --transition-cubic-bezier: 0.3s cubic-bezier(0.2, 0.6, 0, 1);
+  --color-raw-sienna: #{$color-raw-sienna};
+
   --primary-color: #{$bg-white};
   --secondary-color: #{$bg-gray-200};
   --text-primary-color: #{$bg-gray-600};
@@ -28,8 +42,6 @@
   --text-secondary-color: #{$bg-gray-700};
   --text-hover-secondary-color: #{$bg-gray-800};
   --border-primary-color: #{$bg-gray-200};
-
-  --transition-cubic-bezier: 0.3s cubic-bezier(0.2, 0.6, 0, 1);
 }
 
 :root.dark {
