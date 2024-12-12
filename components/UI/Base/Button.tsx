@@ -29,7 +29,7 @@ const Button = defineComponent({
 
     return () => (
       <button
-        className={`border-1 rounded border-solid border-black py-3 px-5 font-bold uppercase leading-5 text-color-primary ${typeClasses} ${props.classes}`}
+        class={`border-1 rounded border-solid border-black py-3 px-5 font-bold uppercase leading-5 text-color-primary ${typeClasses} ${props.classes}`}
         onClick={handleClick}
       >
         {context.slots.default ? context.slots.default() : ""}

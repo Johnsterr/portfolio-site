@@ -25,10 +25,7 @@
     ></span>
   </button>
 
-  <nav
-    class="lg:unset fixed left-0 z-[1] h-full w-full place-items-center bg-bg-secondary transition-all duration-700"
-    :class="navbarClasses"
-  >
+  <nav :class="{ [cls.navbar]: true, [cls.navbarActions]: menuButtonIsActive }">
     <ul class="p-5 lg:flex lg:items-center lg:justify-center lg:gap-5 lg:p-0">
       <li class="my-4 overflow-hidden px-4 lg:m-0 lg:overflow-visible lg:p-0">
         <NuxtLink
@@ -66,6 +63,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from "vue";
 import ToggleThemeMode from "~~/features/ToggleThemeMode/ui/ToggleThemeMode.vue";
+import cls from "./Menu.module.scss";
 
 export default defineComponent({
   components: { ToggleThemeMode },
@@ -109,6 +107,7 @@ export default defineComponent({
     });
 
     return {
+      cls,
       menuButtonIsActive,
       toggleMenuButtonActive,
       navbarClasses,

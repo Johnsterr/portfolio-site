@@ -1,13 +1,22 @@
 <template>
-  <header :class="cls.header">
-    <div class="container" :class="cls.headerInner">
-      <h2 class="relative min-w-[80px] text-[2rem] font-normal leading-[1.2]">
-        <NuxtLink :to="{ name: 'index' }" class="capitalize text-color-primary">
-          Лого<span class="ml-[2px] inline-block text-raw-seinna">.</span>
+  <header
+    :class="
+      classNames(cls.header, [], {
+        [cls.fixed]: !viewportIsAtTop,
+      })
+    "
+  >
+    <div :class="classNames('container', [cls.headerInner])">
+      <h2 :class="classNames(cls.logo)">
+        <NuxtLink :to="{ name: 'index' }" :class="classNames(cls.logoLink)">
+          E<span :class="classNames(cls.logoLinkSpan)">.</span>P<span
+            :class="classNames(cls.logoLinkSpan)"
+            >.</span
+          >
         </NuxtLink>
       </h2>
 
-      <div :class="cls.navbarActions">
+      <div :class="classNames(cls.navbarActions)">
         <ThemeModeButton />
       </div>
 
@@ -18,6 +27,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { classNames } from "~~/shared/lib/classNames/classNames";
 import cls from "./DefaultHeader.module.scss";
 
 export default defineComponent({
@@ -25,8 +35,9 @@ export default defineComponent({
     const viewportIsAtTop = useViewportIsAtTop();
 
     return {
-      viewportIsAtTop,
       cls,
+      classNames,
+      viewportIsAtTop,
     };
   },
 });

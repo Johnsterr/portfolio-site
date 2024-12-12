@@ -16,13 +16,11 @@ const ThemeTogglerSpan = defineComponent({
         : "left-[2px] text-yellow-500";
 
       return (
-        <span
-          className={`relative top-0 h-5 w-5 transition-all ${modeClasses}`}
-        >
+        <span class={`relative top-0 h-5 w-5 transition-all ${modeClasses}`}>
           {props.darkModeActive ? (
-            <IconsMoon className="h-5 w-5" />
+            <IconsMoon class="h-5 w-5" />
           ) : (
-            <IconsSun className="h-5 w-5" />
+            <IconsSun class="h-5 w-5" />
           )}
         </span>
       );

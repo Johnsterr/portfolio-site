@@ -1,5 +1,5 @@
 <template>
-  <button :class="$style.btn" @click="toggleTheme">
+  <button :class="classNames(cls.btn)" @click="toggleTheme">
     <slot />
   </button>
 </template>
@@ -7,6 +7,8 @@
 <script lang="ts">
 import { defineComponent, ref, computed, onMounted, Ref } from "vue";
 import { ThemeMode } from "~~/entities/ThemeMode";
+import { classNames } from "~~/shared/lib/classNames/classNames";
+import cls from "./ToggleThemeMode.module.scss";
 
 export default defineComponent({
   setup() {
@@ -32,6 +34,8 @@ export default defineComponent({
     });
 
     return {
+      cls,
+      classNames,
       isDarkMode,
       toggleTheme,
       btnClasses,

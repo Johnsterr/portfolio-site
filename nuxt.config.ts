@@ -25,11 +25,11 @@ export default defineNuxtConfig({
     storageKey: storageThemeModeKey,
   },
   devServer: {
-    port: 3030,
+    port: 3000,
   },
-  // typescript: {
-  //   shim: false,
-  // },
+  typescript: {
+    typeCheck: true,
+  },
   vite: {
     css: {
       modules: {

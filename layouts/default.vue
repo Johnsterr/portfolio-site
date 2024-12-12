@@ -8,6 +8,7 @@
 import { defineComponent } from "vue";
 import { DefaultHeader } from "~~/widgets/DefaultHeader";
 import { DefaultFooter } from "~~/widgets/DefaultFooter";
+// import MarckScriptRegularWoff2 from "/fonts/MarckScript-Regular.woff2";
 
 export default defineComponent({
   components: {
@@ -26,7 +27,28 @@ export default defineComponent({
           content: "Сайт портфолио Евгения Пашко",
         },
       ],
+      // link: [
+      //   {
+      //     as: "font",
+      //     href: MarckScriptRegularWoff2,
+      //     type: "font/woff2",
+      //     crossorigin: "anonymous",
+      //   },
+      // ],
     });
+
+    // useHead({
+    //   link: [
+    //     {
+    //       rel: "preload",
+    //       as: "font",
+    //       fetchpriority: "high",
+    //       href: MarckScriptRegularWoff2,
+    //       type: "font/woff2",
+    //       crossorigin: "anonymous",
+    //     },
+    //   ],
+    // });
   },
 });
 </script>
